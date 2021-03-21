@@ -9,6 +9,8 @@ pico_sdk_init()
 
 add_executable(pewpew
     pewpew.cpp
+    palettes.cpp
+    sprites.cpp
     hud.cpp
     ship.cpp
 )

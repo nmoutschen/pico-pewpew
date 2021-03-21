@@ -5,8 +5,7 @@ using namespace pimoroni;
 uint16_t buffer[PicoDisplay::WIDTH * PicoDisplay::HEIGHT];
 PicoDisplay pico_display(buffer);
 
-extern char SHIP_PALETTE[];
-extern char SHIP_PIXELS[];
+extern void init_palettes(PicoDisplay);
 extern void draw_ship(PicoDisplay, Point);
 extern void draw_hud(PicoDisplay, uint8_t, uint8_t);
 
@@ -19,9 +18,10 @@ void draw_bg(PicoDisplay display) {
 }
 
 int main() {
+    // Inits
     pico_display.init();
     pico_display.set_backlight(255);
-
+    init_palettes(pico_display);
     Point ship_pos(216, 70);
 
     while (true) {
