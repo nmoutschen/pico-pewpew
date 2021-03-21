@@ -5,14 +5,12 @@ using namespace pimoroni;
 uint16_t buffer[PicoDisplay::WIDTH * PicoDisplay::HEIGHT];
 PicoDisplay pico_display(buffer);
 
-extern void init_palettes(PicoDisplay);
+extern uint16_t PALETTES[16];
 extern void draw_ship(PicoDisplay, Point);
 extern void draw_hud(PicoDisplay, uint8_t, uint8_t);
 
-uint8_t BG_COLOR[] = {65, 32, 81};
-
 void draw_bg(PicoDisplay display) {
-    display.set_pen(BG_COLOR[0], BG_COLOR[1], BG_COLOR[2]);
+    display.set_pen(PALETTES[0]);
     Rect rect_bg(0, 0, PicoDisplay::WIDTH, PicoDisplay::HEIGHT);
     display.rectangle(rect_bg);
 }
@@ -21,7 +19,6 @@ int main() {
     // Inits
     pico_display.init();
     pico_display.set_backlight(255);
-    init_palettes(pico_display);
     Point ship_pos(216, 70);
 
     while (true) {

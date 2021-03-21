@@ -4,32 +4,32 @@
 
 using namespace pimoroni;
 
-extern void draw_sprite(PicoDisplay, int8_t[], Point);
+extern void draw_sprite(PicoDisplay, uint8_t[], Point);
 
-int8_t SPRITE_SHIP[] {
-    10, 11,
-    -1, -1, -1, -1, -1,  7,  7,  7,  3, -1,
-    -1, -1, -1, -1, -1, -1,  5,  5, -1, -1,
-    -1, -1, -1, -1, -1, -1,  7,  6,  6, -1,
-    -1, -1, -1,  7,  7,  7,  7,  7,  7,  3,
-    -1,  7,  7,  8,  8,  8,  8,  7,  7, -1,
-     6,  6,  8,  2,  2,  2,  2,  6,  5,  3,
-    -1,  5,  5,  2,  2,  2,  2,  5,  5, -1,
-    -1, -1, -1,  5,  5,  5,  6,  5,  5,  3,
-    -1, -1, -1, -1, -1, -1,  5,  6,  6, -1,
-    -1, -1, -1, -1, -1, -1,  7,  7, -1, -1,
-    -1, -1, -1, -1, -1,  5,  5,  5,  3, -1
+uint8_t SPRITE_SHIP[] {
+    5, 11,
+    0xff, 0xff, 0xf7, 0x77, 0x3f,
+    0xff, 0xff, 0xff, 0x55, 0xff,
+    0xff, 0xff, 0xff, 0x76, 0x6f,
+    0xff, 0xf7, 0x77, 0x77, 0x73,
+    0xf7, 0x78, 0x88, 0x87, 0x7f,
+    0x66, 0x82, 0x22, 0x26, 0x53,
+    0xf5, 0x52, 0x22, 0x25, 0x5f,
+    0xff, 0xf5, 0x55, 0x65, 0x53,
+    0xff, 0xff, 0xff, 0x56, 0x6f,
+    0xff, 0xff, 0xff, 0x77, 0xff,
+    0xff, 0xff, 0xf5, 0x55, 0x3f
 };
 
-int8_t SPRITE_SHIP_SMALL[] {
-     6,  7,
-    -1, -1,  7,  7,  3, -1,
-    -1, -1, -1,  5, -1, -1,
-    -1,  7,  7,  7,  7,  3,
-     5,  2,  2,  2,  7, -1,
-    -1,  5,  5,  5,  6,  3,
-    -1, -1, -1,  7, -1, -1,
-    -1, -1,  5,  5,  3, -1
+uint8_t SPRITE_SHIP_SMALL[] {
+    3, 7,
+    0xff, 0x77, 0x3f,
+    0xff, 0xf5, 0xff,
+    0xf7, 0x77, 0x73,
+    0x52, 0x22, 0x7f,
+    0xf5, 0x55, 0x63,
+    0xff, 0xf7, 0xff,
+    0xff, 0x55, 0x3f
 };
 
 void draw_ship(pimoroni::PicoDisplay display, pimoroni::Point offset) {
